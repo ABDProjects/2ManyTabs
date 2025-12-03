@@ -1,4 +1,4 @@
-# 2ManyTabs
+![2MT Logo](https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/2mt.png)
 
 Thank you for checking out **2ManyTabs**! This browser extension was built with love by **Aidan**, inspired by my good friend **Oliver**. I’m so grateful for your support — now let’s get you started with downloading and using 2ManyTabs.
 
