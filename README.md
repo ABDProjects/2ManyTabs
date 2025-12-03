@@ -1,5 +1,14 @@
 ![2MT Logo](https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/2mt.png)
 
+---
+
+## Update - V2
+![V2 Is here!](https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/v2ishere-modified.png)
+
+Say hello to 2MT V2! This update brought a brand new revamped UI giving all our users a pleasing experience. This new update also brought you the ability to choose your shortcuts from our wide range of apps. Release is scheduled for 10/12/25. If you would like an shortcut added that we dont have, please make an issue with all the details!
+
+---
+
 Thank you for checking out **2ManyTabs**! This browser extension was built with love by **Aidan**, inspired by my good friend **Oliver**. I’m so grateful for your support — now let’s get you started with downloading and using 2ManyTabs.
 
 ---
