@@ -1,4 +1,3 @@
-/* ----------------- SEARCH ENGINES ----------------- */
 const searchEngines = {
   Google: "https://www.google.com/search?q=",
   Bing: "https://www.bing.com/search?q=",
@@ -31,14 +30,17 @@ document.getElementById("searchForm").addEventListener("submit", e => {
   if (query) window.location.href = searchEngines[currentEngine] + encodeURIComponent(query);
 });
 
-/* ----------------- SIDE PANEL CUSTOMIZATION ----------------- */
 const iconChoices = [
   { name: "TikTok", url: "https://tiktok.com", icon: "https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/tiktok-white-icon.png" },
   { name: "YouTube", url: "https://youtube.com", icon: "https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/youtube-app-white-icon.png" },
   { name: "Discord", url: "https://discord.com/app", icon: "https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/discord-white-icon.png" },
   { name: "Twitch", url: "https://twitch.com", icon: "https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/twitch-white-icon.png" },
   { name: "X", url: "https://x.com", icon: "https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/x-social-media-white-icon.png" },
-  { name: "Snapchat", url: "https://web.snapchat.com", icon: "https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/snapchat-line-icon.png" }
+  { name: "Snapchat", url: "https://web.snapchat.com", icon: "https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/snapchat-line-icon.png" },
+  { name: "Curseforge", url: "https://curseforge.com", icon: "https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/curseforge-white-icon.png" },
+  { name: "Office", url: "https://office.com", icon: "https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/ms365-white-icon.png" },
+  { name: "Notion", url: "https://notion.com", icon: "https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/notion.png" },
+  { name: "Spotify", url: "https://spotify.com", icon: "https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/spotify-white-icon.png" }
 ];
 
 const leftPanel = document.getElementById("leftPanel");
@@ -74,7 +76,6 @@ function addButton(panel, idx, side, slot) {
   panel.appendChild(a);
 }
 
-// Load saved selections
 const savedLeft = JSON.parse(localStorage.getItem("leftPanel"));
 const savedRight = JSON.parse(localStorage.getItem("rightPanel"));
 if(savedLeft) leftPanelData = savedLeft;
@@ -82,13 +83,11 @@ if(savedRight) rightPanelData = savedRight;
 
 renderPanels();
 
-/* ----------------- EDIT MODE ----------------- */
 const editBtn = document.getElementById("editToggle");
 const editPopup = document.getElementById("editPopup");
 const appSelect = document.getElementById("appSelect");
 let editingSlot = null;
 
-// Populate dropdown
 iconChoices.forEach((choice,i) => {
   const opt = document.createElement("option");
   opt.value = i;
@@ -96,14 +95,12 @@ iconChoices.forEach((choice,i) => {
   appSelect.appendChild(opt);
 });
 
-// Toggle edit mode
 editBtn.onclick = () => {
   document.body.classList.toggle("editing");
   editPopup.classList.remove("show");
   editPopup.classList.add("hide");
 }
 
-// Save selection
 document.getElementById("saveApp").onclick = () => {
   if (!editingSlot) return;
   const newIndex = parseInt(appSelect.value);
@@ -116,7 +113,6 @@ document.getElementById("saveApp").onclick = () => {
 
   renderPanels();
 
-  // Animate popup out
   editPopup.classList.remove("show");
   editPopup.classList.add("hide");
 }
