@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "2ManyTabs V2",
+  "version": "2.0.0",
+  "description": "Gives a new start to each search for life.",
+  "icons": {
+    "128": "128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "start.html"
+  }
+}
