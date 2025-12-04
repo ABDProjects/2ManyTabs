@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2ManyTabs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Side Panels -->
+  <div class="side-panel left-panel" id="leftPanel"></div>
+  <div class="side-panel right-panel" id="rightPanel"></div>
+
+  <!-- Logo -->
+  <img src="https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/2mt.png" class="title-img" />
+
+  <!-- Search Form -->
+  <form class="search-container" id="searchForm">
+    <img src="https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/search-magnifying-glass-white-icon.png" width="22" height="22" />
+    <input type="text" id="query" placeholder="Search with Google..." />
+    <button type="submit">Go</button>
+  </form>
+
+  <!-- Search Engine Selector -->
+  <div class="engine-selector" id="engineSelector"></div>
+
+  <!-- Edit Button -->
+  <button id="editToggle" class="edit-btn">
+    <img src="https://zcjwfvaivdwflqajavrm.supabase.co/storage/v1/object/public/CDN/2ManyTabs/pencil-icon.png" class="edit-img" alt="Edit">
+  </button>
+
+  <!-- Edit Popup -->
+  <div id="editPopup" class="edit-popup">
+    <div class="popup-content">
+      <h3>Select an App</h3>
+      <select id="appSelect"></select>
+      <button id="saveApp">Save</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
