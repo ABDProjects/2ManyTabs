@@ -71,6 +71,6 @@ Inspired by **Oliver**
 
 You can help 2MT grow in many ways:
 
-**[Donate to the project]()**
-**Tell a friend**
-**[Contribute features]()**
+**[Donate to the project]().**
+**Tell a friend.**
+**[Contribute features]().**
