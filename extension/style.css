@@ -1,0 +1,267 @@
+/* Base Styling */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a, #2a2a2a);
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  transition: background 0.5s;
+}
+
+.title-img {
+  width: 200px;
+  max-width: 60%;
+  height: auto;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease;
+}
+
+.title-img:hover {
+  transform: scale(1.05);
+}
+
+/* ----------------- SEARCH BAR ----------------- */
+.search-container {
+  display: flex;
+  align-items: center;
+  background: #222;
+  border-radius: 12px;       /* less circular */
+  padding: 10px 15px;        /* tighter padding */
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  width: 80%;
+  max-width: 600px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.5);
+}
+
+.search-container input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1.2rem;
+  outline: none;
+  margin-left: 10px;
+  transition: all 0.3s;
+}
+
+.search-container input:focus {
+  color: #2563eb;
+}
+
+.search-container button {
+  background: #2563eb;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;       /* less rounded for better alignment */
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+  margin-left: 8px;          /* aligns better with input */
+}
+
+.search-container button:hover {
+  background: #1e40af;
+  transform: scale(1.03);
+}
+
+/* Side Panels */
+.side-panel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.left-panel { left: 20px; }
+.right-panel { right: 20px; }
+
+.side-panel a {
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.side-panel a:hover {
+  transform: scale(1.15);
+}
+
+.side-panel img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0.8);
+  transition: filter 0.3s, transform 0.3s;
+}
+
+.side-panel img:hover {
+  filter: brightness(1);
+}
+
+/* Highlight outline in edit mode */
+body.editing .side-panel a {
+  outline: 2px dashed #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 5px;
+}
+
+/* Search Engine Selector */
+.engine-selector {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.engine-selector button {
+  background: transparent;
+  border: 1px solid #555;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.engine-selector button.active {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.engine-selector button:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+/* Edit Button */
+.edit-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 20;
+}
+
+.edit-img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.edit-img:hover {
+  transform: scale(1.15) rotate(-10deg);
+}
+
+/* Edit Popup */
+.edit-popup {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #222;
+  padding: 15px 20px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 30;
+  border: 1px solid #555;
+  min-width: 180px;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.edit-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.edit-popup.hide {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.edit-popup h3 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.edit-popup select {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: white;
+  color: black;
+  font-size: 0.95rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.edit-popup button {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.edit-popup button:hover {
+  background: #1e40af;
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .search-container { width: 90%; padding: 8px 15px; }
+  .search-container input { font-size: 1rem; }
+  .search-container button { padding: 8px 16px; font-size: 0.9rem; }
+
+  .side-panel {
+    flex-direction: row;
+    top: auto;
+    bottom: 80px;
+    transform: none;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .side-panel img { width: 24px; height: 24px; }
+}
+
+@media (max-width: 480px) {
+  .title-img { width: 150px; }
+  .engine-selector button { font-size: 0.8rem; padding: 6px 12px; }
+}
